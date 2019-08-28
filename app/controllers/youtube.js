@@ -31,17 +31,17 @@ function __getFilterFile() {
 }
 
 /**
- * Get channel
+ * Get channels
  * 
- * Gets individual channel from a specific config item
- * @param {string} index 
- * @returns {Promise}
+ * Gets all channels from our list in our config
+ * @returns {Array[Promise]}
  */
-function __getChannel(index) {
+function __getChannels(index) {
     const youtube = __getClient();
-    const forUsername = config.channels[index - 1];
     
-    return youtube.channels.list({ part: 'id', forUsername });
+    return config.channels.map((forUsername) => {
+        return youtube.channels.list({ part: 'id', forUsername });
+    });
 }
 
 
@@ -52,7 +52,7 @@ function __getChannel(index) {
  * @returns {array} [ids]
  */
 async function getChannelIds() {
-    const res = await Promise.all([__getChannel(1), __getChannel(2)]);
+    const res = await Promise.all(__getChannels());
 
     return res.map((channel) => channel.data.items[0].id);
 }
