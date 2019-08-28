@@ -1,5 +1,5 @@
 /**
- * CONFIG/AUTH
+ * CONFIG/YOUTUBE
  */
 
 module.exports = {
