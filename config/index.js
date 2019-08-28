@@ -5,10 +5,10 @@
  */
  
 // intitialize our environment vars
-require("dotenv").config();
+require('dotenv').config();
 
-const youtube = require("./youtube");
-const database = require("./database");
+const youtube = require('./youtube');
+const database = require('./database');
 
 const config = {
   youtube,

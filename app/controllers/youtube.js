@@ -1,6 +1,6 @@
 var { google } = require('googleapis');
-const config = require("../../config")("youtube");
-const fs = require("fs-extra");
+const config = require('../../config')('youtube');
+const fs = require('fs-extra');
 
 /**
  * Get Client
@@ -40,7 +40,8 @@ function __getFilterFile() {
 function __getChannel(index) {
     const youtube = __getClient();
     const forUsername = config.channels[index - 1];
-    return youtube.channels.list({ part: "id", forUsername });
+    
+    return youtube.channels.list({ part: 'id', forUsername });
 }
 
 

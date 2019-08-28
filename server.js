@@ -1,10 +1,10 @@
 // our base packages
-const express = require("express");
-const cors = require("cors");
-const bodyparser = require("body-parser");
+const express = require('express');
+const cors = require('cors');
+const bodyparser = require('body-parser');
 
 // get all our routes
-const authRoutes = require("./app/routes/auth");
+const youtubeRoutes = require('./app/routes/youtube');
 
 // initialize express app
 const app = express();
@@ -15,7 +15,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
 // assign our routes
-app.use('/auth', authRoutes);
+app.use('/youtube', youtubeRoutes);
 
 // intialize server
 const port = process.env.SERVER_PORT || 3000;

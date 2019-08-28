@@ -9,8 +9,8 @@
  */
 
 // initialize knex, our ORM
-const config = require("../../config")("database");
-const knex = require("knex")(config);
-const bookshelf = require("bookshelf")(knex);
+const config = require('../../config')('database');
+const knex = require('knex')(config);
+const bookshelf = require('bookshelf')(knex);
 
 module.exports = bookshelf;
